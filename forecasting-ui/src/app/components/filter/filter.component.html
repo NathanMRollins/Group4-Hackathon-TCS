@@ -1,0 +1,45 @@
+<h4>Forecasting </h4>
+<div class="row">
+  <div class="col-md-3">
+    <label>History Start Date : </label>
+    <mat-form-field class="dateField">
+      <input matInput [matDatepicker]="picker" [max]="minDate" [(ngModel)]="historyStartDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="col-md-2 form-group">
+    <label>No of Weeks </label>
+    <input type="text" class="weeks" name="historyWeek" [(ngModel)]="historyWeek" />
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label for="channel">Channel</label>
+      <select name="channel" class="channel" [(ngModel)]="channel">
+        <option value='111'>Direct Store</option>
+        <option value='122'>Direct Online</option>
+        <option value='133'>Phone</option>
+      </select>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <label>Forecast Start Date : </label>
+    <mat-form-field class="dateField">
+      <input matInput [matDatepicker]="toPicker" [min]="minDate" [(ngModel)]="forecastStartDate">
+      <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+      <mat-datepicker #toPicker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="col-md-2  form-group">
+    <label>No of Weeks </label>
+    <input type="text" class="weeks" name="forecastWeek" [(ngModel)]="forecastWeek" />
+  </div>
+  <div class="col-md-4">
+    <button class="btn btn-primary" type="button" (click)="applyChange()">Submit</button>
+  </div>
+  <div class="col-md-5">
+    <button class="btn btn-primary" type="button" (click)="reset()">Reset</button>
+  </div>
+</div>
